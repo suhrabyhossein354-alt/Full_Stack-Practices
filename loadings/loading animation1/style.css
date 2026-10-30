@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #111;
+}
+
+.container {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.spinner span {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  margin: -10px;
+  border-radius: 50%;
+  background-color: yellow;
+
+  --angle: 0deg; 
+
+  animation: loading 3s ease-in-out infinite;
+} 
+
+.spinner span:nth-child(1) {
+  --angle: 0deg;
+  animation-delay: 0s;
+}
+
+.spinner span:nth-child(2) {
+  --angle: 45deg;
+  animation-delay: 0.1s;
+}
+
+.spinner span:nth-child(3) {
+  --angle: 90deg;
+  animation-delay: 0.2s;
+}
+
+.spinner span:nth-child(4) {
+  --angle: 135deg;
+  animation-delay: 0.3s;
+}
+
+.spinner span:nth-child(5) {
+  --angle: 180deg;
+  animation-delay: 0.4s;
+}
+
+.spinner span:nth-child(6) {
+  --angle: 225deg;
+  animation-delay: 0.5s;
+}
+
+.spinner span:nth-child(7) {
+  --angle: 270deg;
+  animation-delay: 0.6s;
+}
+
+.spinner span:nth-child(8) {
+  --angle: 315deg;
+  animation-delay: 0.7s;
+}
+
+@keyframes loading {
+  0%,
+  100% {
+    transform: rotate(var(--angle)) translateY(-90px);
+  }
+
+  50% {
+    transform: rotate(var(--angle)) translateY(90px);
+  }
+}
